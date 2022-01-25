@@ -3,7 +3,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from flask_blog import db, bcrypt
 from flask_blog.models import User, Post
 from flask_blog.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
-                                   RequestResetForm, ResetPasswordForm)
+                                   RequestResetForm, ResetPasswordForm, PostForm)
 from flask_blog.users.utils import save_picture, send_reset_email
 
 users = Blueprint('users', __name__)
@@ -73,7 +73,7 @@ def new_post():
 		db.session.add(post)
 		db.session.commit()
 		flash('Your post has been created!', 'success')
-		return redirect(url_for('home'))
+		return redirect(url_for('main.home'))
 	return render_template('create_post.html', title='New Post',
 	 form=form, legend='New Post')
 

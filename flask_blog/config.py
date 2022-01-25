@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
@@ -7,4 +8,4 @@ class Config:
     MAIL_PORT = 465
     MAIL_USE_TLS = True
     MAIL_USERNAME = 'lorenzo_ostano@yahoo.com'
-    MAIL_PASSWORD = 'Lo752672$'
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
