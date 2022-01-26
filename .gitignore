@@ -6,3 +6,4 @@ flask_blog/config.py
 .env
 venv
 env
+*/__pycache__
